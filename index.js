@@ -11,7 +11,7 @@ const colombianHolidaysByYear = (year = 1970) => {
   const validYear = /^(19[789]\d|[2-9]\d{3})$/.test(year);
 
   if (!validYear) {
-    throw new Error(`Invalid Year ${year}`);
+    throw new Error(`Invalid year: ${year}`);
   }
 
   const normalHolidays = HOLIDAYS.map((holiday) => ({

@@ -1,39 +1,43 @@
-import { addZero, butcherAlgorithm, getFormattedDate } from '../dateUtils';
+import test from 'ava';
+import { addZero, butcherAlgorithm, getFormattedDate, nextDay } from '../dateUtils.js';
 
-describe('getFormattedDate method', () => {
-  test('should return the date formatted correctly', () => {
-    expect(getFormattedDate(1984, 12, 1)).toEqual('1984-12-01');
+test('addZero method', t => {
+  t.is(addZero(1), '01');
+  t.is(addZero(10), '10');
+  t.throws(() => addZero('hello'), {
+    message: 'Invalid type'
   });
-
-  test('should return Invalid type error if any value is a string', () => {
-    expect(() => { getFormattedDate('hi', 11, 12); }).toThrowError('Invalid type');
-    expect(() => { getFormattedDate(1984, 'hi', 12); }).toThrowError('Invalid type');
-    expect(() => { getFormattedDate(1984, 11, 'hi'); }).toThrowError('Invalid type');
-  })
+  t.throws(() => addZero(-1), {
+    message: 'Invalid value: -1'
+  });
+  t.throws(() => addZero(0.1), {
+    message: 'Invalid value: 0.1'
+  });
+  t.throws(() => addZero(-0.1), {
+    message: 'Invalid value: -0.1'
+  });
 });
 
-describe('addZero method', () => {
-  test('should return Invalid type error if a string is passed', () => {
-    expect(() => { addZero('hello'); }).toThrowError('Invalid type');
+test('butcherAlgorithm  method', t => {
+  t.is(butcherAlgorithm(1970), '1970-03-29');
+  t.throws(() => butcherAlgorithm('hello'), {
+    message: 'Invalid type'
   });
-
-  test('should return Invalid value error if a negative value is passed', () => {
-    expect(() => { addZero(-1); }).toThrowError('Invalid value: -1');
-  })
-
-  test('should return Invalid value error if a float value is passed', () => {
-    expect(() => { addZero(0.1); }).toThrowError('Invalid value: 0.1');
-    expect(() => { addZero(-0.1); }).toThrowError('Invalid value: -0.1');
-  })
-
-  test('should return the value correctly', () => {
-    expect(addZero(1)).toEqual('01');
-    expect(addZero(10)).toEqual('10');
-  })
 });
 
-describe('butcherAlgorithm  method', () => {
-  test('should return the value correctly', () => {
-    expect(butcherAlgorithm(1970)).toEqual('1970-03-29');
+test('getFormattedDate method', t => {
+  t.is(getFormattedDate(1984, 12, 1), '1984-12-01');
+  t.throws(() => getFormattedDate('hi', 11, 12), {
+    message: 'Invalid type'
   });
+  t.throws(() => getFormattedDate(1984, 'hi', 12), {
+    message: 'Invalid type'
+  });
+  t.throws(() => getFormattedDate(1984, 11, 'hi'), {
+    message: 'Invalid type'
+  });
+});
+
+test('nextDaym method', t => {
+  t.is(nextDay('2021-09', 2), '2021-09-07');
 });

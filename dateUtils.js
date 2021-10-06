@@ -1,6 +1,8 @@
 export const MILLISECONDS_DAY = 86400000;
 
 export const butcherAlgorithm = (year) => {
+  if (typeof year !== 'number') throw new TypeError('Invalid type');
+
   const A = year % 19;
   const B = Math.floor(year / 100);
   const C = year % 100;

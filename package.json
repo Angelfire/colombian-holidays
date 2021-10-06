@@ -5,10 +5,10 @@
   "main": "index.js",
   "license": "ISC",
   "engines": {
-		"node": ">=14.x"
-	},
+    "node": ">=14.x"
+  },
   "scripts": {
-    "test": "tsd && jest"
+    "test": "tsd && ava"
   },
   "author": {
     "name": "Andrés Bedoya",
@@ -25,11 +25,9 @@
     "1970"
   ],
   "devDependencies": {
+    "ava": "^3.15.0",
     "jest": "^27.2.4",
     "tsd": "^0.17.0",
     "typescript": "^4.4.3"
-  },
-  "jest": {
-    "testEnvironment": "node"
   }
 }
