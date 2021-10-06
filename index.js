@@ -6,7 +6,9 @@ import {
   nextDay
 } from "./dateUtils.js";
 
-const colombianHolidaysByYear = (year = 1970) => {
+const colombianHolidaysByYear = (year) => {
+  if (!year) throw new Error('A valid year was not provided');
+
   // validate years in range 1970 - 9999
   const validYear = /^(19[789]\d|[2-9]\d{3})$/.test(year);
 

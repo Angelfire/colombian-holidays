@@ -11,6 +11,9 @@ test('main', t => {
   t.throws(() => colombianHolidaysByYear('hello'), {
     message: 'Invalid year: hello'
   });
+  t.throws(() => colombianHolidaysByYear(), {
+    message: 'A valid year was not provided'
+  });
   t.deepEqual(colombianHolidaysByYear(2021), [
     {
       holiday: '2021-01-01',
