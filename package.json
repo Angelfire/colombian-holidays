@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Colombian Holidays since 1970",
   "main": "index.js",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": "angelfire/colombian-holidays",
   "engines": {
     "node": ">=14.x"
   },
