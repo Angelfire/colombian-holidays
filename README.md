@@ -117,3 +117,7 @@ colombianHolidaysByYear(2021);
 Type: `number`
 
 Year to get the holidays (valid between 1970 and 9999)
+
+### License
+
+MIT
