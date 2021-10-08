@@ -1,18 +1,18 @@
 import test from 'ava';
-import colombianHolidaysByYear from './index.js';
+import colombianHolidaysByYear from '../index.js';
 
 test('main', t => {
   t.throws(() => colombianHolidaysByYear(1969), {
-    message: 'Invalid year: 1969'
+    message: 'A year was not provided or is invalid'
   });
   t.throws(() => colombianHolidaysByYear(10000), {
-    message: 'Invalid year: 10000'
+    message: 'A year was not provided or is invalid'
   });
   t.throws(() => colombianHolidaysByYear('hello'), {
-    message: 'Invalid year: hello'
+    message: 'A year was not provided or is invalid'
   });
   t.throws(() => colombianHolidaysByYear(), {
-    message: 'A valid year was not provided'
+    message: 'A year was not provided or is invalid'
   });
   t.deepEqual(colombianHolidaysByYear(2021), [
     {
