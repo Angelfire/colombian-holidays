@@ -2,6 +2,12 @@
 
 Non-working paid holidays in Colombia. [Ley 51 de 1983](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=4954)
 
+## Install
+
+```js
+$ npm install colombian-holidays
+```
+
 ## Usage
 
 ```js
