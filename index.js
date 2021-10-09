@@ -6,7 +6,7 @@ import {
   nextDay
 } from "./dateUtils.js";
 
-const colombianHolidaysByYear = (year) => {
+const colombianHolidaysByYear = (year = new Date().getFullYear()) => {
   // validate years in range 1970 - 9999
   const validYear = /^(19[789]\d|[2-9]\d{3})$/.test(year);
 
@@ -15,15 +15,15 @@ const colombianHolidaysByYear = (year) => {
   }
 
   const normalHolidays = HOLIDAYS.map((holiday) => ({
-    holiday: nextDay(`${year}-${holiday.day}`, holiday.daysToSum),
-    celebrationDay: `${year}-${holiday.day}`,
-    celebration: holiday.celebration
+    holiday: nextDay(`${year}-${holiday.shortDate}`, holiday.daysToSum),
+    celebrationDay: `${year}-${holiday.shortDate}`,
+    holidayName: holiday.holidayName
   }));
 
   const sunday = new Date(butcherAlgorithm(year));
 
   const easterWeekHolidays = EASTER_WEEK_HOLIDAYS.map((ewHoliday) => {
-    const day = new Date(sunday.getTime() + ewHoliday.day * MILLISECONDS_DAY);
+    const day = new Date(sunday.getTime() + ewHoliday.offset * MILLISECONDS_DAY);
 
     return {
       holiday: nextDay(
@@ -39,7 +39,7 @@ const colombianHolidaysByYear = (year) => {
         day.getUTCMonth() + 1,
         day.getUTCDate()
       ),
-      celebration: ewHoliday.celebration
+      celebration: ewHoliday.holidayName
     };
   });
 
@@ -49,4 +49,3 @@ const colombianHolidaysByYear = (year) => {
 };
 
 export default colombianHolidaysByYear;
-

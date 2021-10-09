@@ -11,24 +11,25 @@ $ npm install colombian-holidays
 ## Usage
 
 ```js
+// Note: if year is not provided, will return the holidays for the current year
 import colombianHolidaysByYear from "colombian-holidays";
 
-colombianHolidaysByYear(2021);
+colombianHolidaysByYear();
 //=> [
 //   {
 //     holiday: '2021-01-01',
 //     celebrationDay: '2021-01-01',
-//     celebration: 'Año Nuevo'
+//     holidayName: 'Año Nuevo'
 //   },
 //   {
 //     holiday: '2021-01-11',
 //     celebrationDay: '2021-01-06',
-//     celebration: 'Día de los Reyes Magos'
+//     holidayName: 'Día de los Reyes Magos'
 //   },
 //   {
 //     holiday: '2021-03-22',
 //     celebrationDay: '2021-03-19',
-//     celebration: 'Día de San José'
+//     holidayName: 'Día de San José'
 //   },
 //   {
 //     holiday: '2021-04-01',
@@ -43,7 +44,7 @@ colombianHolidaysByYear(2021);
 //   {
 //     holiday: '2021-05-01',
 //     celebrationDay: '2021-05-01',
-//     celebration: 'Día del Trabajo'
+//     holidayName: 'Día del Trabajo'
 //   },
 //   {
 //     holiday: '2021-05-17',
@@ -63,47 +64,47 @@ colombianHolidaysByYear(2021);
 //   {
 //     holiday: '2021-07-05',
 //     celebrationDay: '2021-06-29',
-//     celebration: 'San Pedro y San Pablo'
+//     holidayName: 'San Pedro y San Pablo'
 //   },
 //   {
 //     holiday: '2021-07-20',
 //     celebrationDay: '2021-07-20',
-//     celebration: 'Día de la Independencia'
+//     holidayName: 'Día de la Independencia'
 //   },
 //   {
 //     holiday: '2021-08-07',
 //     celebrationDay: '2021-08-07',
-//     celebration: 'Batalla de Boyacá'
+//     holidayName: 'Batalla de Boyacá'
 //   },
 //   {
 //     holiday: '2021-08-16',
 //     celebrationDay: '2021-08-15',
-//     celebration: 'La Asunción de la Virgen'
+//     holidayName: 'La Asunción de la Virgen'
 //   },
 //   {
 //     holiday: '2021-10-18',
 //     celebrationDay: '2021-10-12',
-//     celebration: 'Día de la Raza'
+//     holidayName: 'Día de la Raza'
 //   },
 //   {
 //     holiday: '2021-11-01',
 //     celebrationDay: '2021-11-01',
-//     celebration: 'Todos los Santos'
+//     holidayName: 'Todos los Santos'
 //   },
 //   {
 //     holiday: '2021-11-15',
 //     celebrationDay: '2021-11-11',
-//     celebration: 'Independencia de Cartagena'
+//     holidayName: 'Independencia de Cartagena'
 //   },
 //   {
 //     holiday: '2021-12-08',
 //     celebrationDay: '2021-12-08',
-//     celebration: 'Día de la Inmaculada Concepción'
+//     holidayName: 'Día de la Inmaculada Concepción'
 //   },
 //   {
 //     holiday: '2021-12-25',
 //     celebrationDay: '2021-12-25',
-//     celebration: 'Día de Navidad'
+//     holidayName: 'Día de Navidad'
 //   }
 // ]
 ```

@@ -1,8 +1,6 @@
 export const MILLISECONDS_DAY = 86400000;
 
 export const butcherAlgorithm = (year) => {
-  if (typeof year !== 'number') throw new TypeError('Invalid type');
-
   const A = year % 19;
   const B = Math.floor(year / 100);
   const C = year % 100;
@@ -39,19 +37,9 @@ export const nextDay = (day, sum) => {
 };
 
 export const getFormattedDate = (year, month, day) => {
-  if (
-    typeof year !== 'number'
-    || typeof month !== 'number'
-    || typeof day !== 'number'
-  ) throw new TypeError('Invalid type');
-
   return `${year}-${addZero(month)}-${addZero(day)}`;
 };
 
 export const addZero = (number = 0) => {
-  if (typeof number !== 'number') throw new TypeError('Invalid type');
-
-  if (!(/^[1-9]+[0-9]*$/.test(number))) throw new Error(`Invalid value: ${number}`);
-
   return number < 10 ? `0${number}` : `${number}`;
 }
