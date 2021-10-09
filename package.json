@@ -1,6 +1,6 @@
 {
   "name": "colombia-holiday",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Colombian Holidays since 1970",
   "main": "index.js",
   "license": "MIT",

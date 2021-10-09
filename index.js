@@ -39,7 +39,7 @@ const colombianHolidaysByYear = (year = new Date().getFullYear()) => {
         day.getUTCMonth() + 1,
         day.getUTCDate()
       ),
-      celebration: ewHoliday.holidayName
+      holidayName: ewHoliday.holidayName
     };
   });
 
