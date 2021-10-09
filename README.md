@@ -5,14 +5,14 @@ Non-working paid holidays in Colombia. [Ley 51 de 1983](https://www.funcionpubli
 ## Install
 
 ```js
-$ npm install colombian-holidays
+$ npm i colombia-holiday
 ```
 
 ## Usage
 
 ```js
 // Note: if year is not provided, will return the holidays for the current year
-import colombianHolidaysByYear from "colombian-holidays";
+import colombianHolidaysByYear from "colombia-holiday";
 
 colombianHolidaysByYear();
 //=> [
