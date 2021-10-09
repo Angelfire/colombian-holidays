@@ -37,7 +37,7 @@ export const nextDay = (day, sum) => {
 };
 
 export const getFormattedDate = (year, month, day) => {
-  return `${year}-${addZero(month)}-${addZero(day)}`;
+  return `${year}/${addZero(month)}/${addZero(day)}`;
 };
 
 export const addZero = (number = 0) => {

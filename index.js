@@ -15,8 +15,8 @@ const colombianHolidaysByYear = (year = new Date().getFullYear()) => {
   }
 
   const normalHolidays = HOLIDAYS.map((holiday) => ({
-    holiday: nextDay(`${year}-${holiday.shortDate}`, holiday.daysToSum),
-    celebrationDay: `${year}-${holiday.shortDate}`,
+    holiday: nextDay(`${year}/${holiday.shortDate}`, holiday.daysToSum),
+    celebrationDay: `${year}/${holiday.shortDate}`,
     holidayName: holiday.holidayName
   }));
 
